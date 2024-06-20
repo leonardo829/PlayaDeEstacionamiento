@@ -11,7 +11,7 @@ namespace Datos
     public class DatosConexionDB
     {
         public SqlConnection conexion;
-        public string cadenaConexion = @"Data Source=DESKTOP-LF6ERKD\SQLEXPRESS;Initial Catalog=PlayaEstacionamiento;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False"
+        public string cadenaConexion = @"Data Source=DESKTOP-LF6ERKD\SQLEXPRESS;Initial Catalog=PlayaEstacionamiento;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
              public DatosConexionDB()
         {
