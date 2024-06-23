@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+
     public class Usuario : Vehiculo
     {
         #region atributos
         int idUsuarios;
         string nombre {  get; set; }
         int telefono { get; set; }
+
         Vehiculo Vehiculo = new Vehiculo();
         #endregion
 

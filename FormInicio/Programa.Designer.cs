@@ -47,6 +47,8 @@
             lbSll = new ListBox();
             lblRLiberar = new Label();
             btnLiberar = new Button();
+            txtMatricula = new TextBox();
+            lblMatriculaR = new Label();
             tabControl1.SuspendLayout();
             tpBuscarLugar.SuspendLayout();
             tpReservar.SuspendLayout();
@@ -58,10 +60,10 @@
             tabControl1.Controls.Add(tpBuscarLugar);
             tabControl1.Controls.Add(tpReservar);
             tabControl1.Controls.Add(tpLiberar);
-            tabControl1.Location = new Point(76, 45);
+            tabControl1.Location = new Point(36, 36);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(628, 385);
+            tabControl1.Size = new Size(707, 469);
             tabControl1.TabIndex = 0;
             // 
             // tpBuscarLugar
@@ -77,7 +79,7 @@
             tpBuscarLugar.Name = "tpBuscarLugar";
             tpBuscarLugar.Padding = new Padding(3);
             tpBuscarLugar.RightToLeft = RightToLeft.No;
-            tpBuscarLugar.Size = new Size(620, 347);
+            tpBuscarLugar.Size = new Size(699, 431);
             tpBuscarLugar.TabIndex = 0;
             tpBuscarLugar.Text = "Buscar Lugar";
             // 
@@ -129,6 +131,8 @@
             // tpReservar
             // 
             tpReservar.BackColor = Color.FromArgb(30, 90, 130);
+            tpReservar.Controls.Add(lblMatriculaR);
+            tpReservar.Controls.Add(txtMatricula);
             tpReservar.Controls.Add(lblSLR);
             tpReservar.Controls.Add(lbLugDisp);
             tpReservar.Controls.Add(lblSTVR);
@@ -140,16 +144,16 @@
             tpReservar.Location = new Point(4, 34);
             tpReservar.Name = "tpReservar";
             tpReservar.Padding = new Padding(3);
-            tpReservar.Size = new Size(620, 347);
+            tpReservar.Size = new Size(699, 431);
             tpReservar.TabIndex = 1;
             tpReservar.Text = "Reservar Lugar";
             // 
             // lblSLR
             // 
             lblSLR.ForeColor = SystemColors.ButtonHighlight;
-            lblSLR.Location = new Point(223, 66);
+            lblSLR.Location = new Point(293, 61);
             lblSLR.Name = "lblSLR";
-            lblSLR.Size = new Size(203, 69);
+            lblSLR.Size = new Size(154, 69);
             lblSLR.TabIndex = 10;
             lblSLR.Text = "Selecione un lugar";
             lblSLR.TextAlign = ContentAlignment.MiddleCenter;
@@ -161,7 +165,7 @@
             lbLugDisp.FormattingEnabled = true;
             lbLugDisp.ItemHeight = 32;
             lbLugDisp.Items.AddRange(new object[] { "" });
-            lbLugDisp.Location = new Point(256, 137);
+            lbLugDisp.Location = new Point(300, 133);
             lbLugDisp.Name = "lbLugDisp";
             lbLugDisp.Size = new Size(138, 100);
             lbLugDisp.TabIndex = 9;
@@ -169,7 +173,7 @@
             // lblSTVR
             // 
             lblSTVR.ForeColor = SystemColors.ButtonHighlight;
-            lblSTVR.Location = new Point(14, 66);
+            lblSTVR.Location = new Point(61, 61);
             lblSTVR.Name = "lblSTVR";
             lblSTVR.Size = new Size(203, 69);
             lblSTVR.TabIndex = 8;
@@ -180,7 +184,7 @@
             // 
             lblRLD.AutoSize = true;
             lblRLD.ForeColor = SystemColors.ButtonHighlight;
-            lblRLD.Location = new Point(158, 3);
+            lblRLD.Location = new Point(202, 15);
             lblRLD.Name = "lblRLD";
             lblRLD.Size = new Size(310, 32);
             lblRLD.TabIndex = 7;
@@ -193,7 +197,7 @@
             lbTVR.FormattingEnabled = true;
             lbTVR.ItemHeight = 32;
             lbTVR.Items.AddRange(new object[] { "auto", "moto", "camioneta" });
-            lbTVR.Location = new Point(53, 137);
+            lbTVR.Location = new Point(95, 133);
             lbTVR.Name = "lbTVR";
             lbTVR.Size = new Size(138, 100);
             lbTVR.TabIndex = 6;
@@ -202,7 +206,7 @@
             // 
             lblLugarR.BorderStyle = BorderStyle.Fixed3D;
             lblLugarR.ForeColor = SystemColors.ButtonHighlight;
-            lblLugarR.Location = new Point(99, 240);
+            lblLugarR.Location = new Point(137, 334);
             lblLugarR.Name = "lblLugarR";
             lblLugarR.Size = new Size(447, 85);
             lblLugarR.TabIndex = 5;
@@ -213,12 +217,13 @@
             btnReservar.Cursor = Cursors.Hand;
             btnReservar.FlatStyle = FlatStyle.Popup;
             btnReservar.ForeColor = SystemColors.ButtonHighlight;
-            btnReservar.Location = new Point(448, 150);
+            btnReservar.Location = new Point(300, 256);
             btnReservar.Name = "btnReservar";
             btnReservar.Size = new Size(112, 75);
             btnReservar.TabIndex = 4;
             btnReservar.Text = "Reservar";
             btnReservar.UseVisualStyleBackColor = true;
+            btnReservar.Click += btnReservar_Click;
             // 
             // tpLiberar
             // 
@@ -230,7 +235,7 @@
             tpLiberar.Font = new Font("Segoe UI", 12F);
             tpLiberar.Location = new Point(4, 34);
             tpLiberar.Name = "tpLiberar";
-            tpLiberar.Size = new Size(620, 347);
+            tpLiberar.Size = new Size(699, 431);
             tpLiberar.TabIndex = 2;
             tpLiberar.Text = "Liberar Lugar";
             // 
@@ -278,6 +283,24 @@
             btnLiberar.Text = "Liberar Lugar";
             btnLiberar.UseVisualStyleBackColor = true;
             // 
+            // txtMatricula
+            // 
+            txtMatricula.Location = new Point(479, 160);
+            txtMatricula.Name = "txtMatricula";
+            txtMatricula.Size = new Size(145, 39);
+            txtMatricula.TabIndex = 11;
+            txtMatricula.TextAlign = HorizontalAlignment.Center;
+            // 
+            // lblMatriculaR
+            // 
+            lblMatriculaR.ForeColor = SystemColors.ButtonHighlight;
+            lblMatriculaR.Location = new Point(488, 60);
+            lblMatriculaR.Name = "lblMatriculaR";
+            lblMatriculaR.Size = new Size(126, 69);
+            lblMatriculaR.TabIndex = 12;
+            lblMatriculaR.Text = "ingrese su matricula";
+            lblMatriculaR.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Programa
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -319,5 +342,7 @@
         private ListBox lbSll;
         private Label lblRLiberar;
         private Button btnLiberar;
+        private Label lblMatriculaR;
+        private TextBox txtMatricula;
     }
 }
