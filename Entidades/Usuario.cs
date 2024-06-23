@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 namespace Entidades
 {
 
-    public class Usuario : Vehiculo
+    public class Usuario 
     {
         #region atributos
-        int idUsuarios;
-        string nombre {  get; set; }
-        int telefono { get; set; }
+        private int UsuarioID;
+        private string nombre {  get; set; }
+        private Int64 telefono { get; set; }
 
-        Vehiculo Vehiculo = new Vehiculo();
+        private string tipo { get; set; }
+        private string dominio { get; set; }
+
         #endregion
 
         #region Constructor
@@ -22,6 +24,9 @@ namespace Entidades
         {
             nombre = string.Empty;
             telefono = 0;
+            dominio = string.Empty;
+            tipo = string.Empty;
+            
         }
         #endregion
 
@@ -31,11 +36,23 @@ namespace Entidades
             get { return nombre; }
             set { nombre = value; }
         }
-        public int Telefono
+        public Int64 Telefono
         {
             get { return telefono; } 
             set { telefono = value; }
         }
+        public string Dominio
+        {
+            get { return dominio; }
+            set { dominio = value; }
+        }
+        public string Tipo
+        {
+            get { return tipo; } 
+            set { tipo = value; }
+        }
+        
+
 
         #endregion
     }

@@ -7,20 +7,21 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Entidades
 {
-    public class EspacioEstacionamiento
+    public class Reserva
+
     {
         #region atributos
-        int nEspacio {  get; set; }
-        string tVehiculo { get; set; }
-        bool disponibilidad { get; set; }
+        private int reservaID { get; set; }
+        private int usuarioID { get; set; }
+        private int nEspacio { get; set; }
         #endregion
 
         #region Constructor
-        public void Espacios()
+        public void Reservas()
         {
+            reservaID = 0;
+            usuarioID = 0;
             nEspacio = 0;
-            tVehiculo = string.Empty;
-            disponibilidad = true;
         }
         #endregion
 
@@ -30,15 +31,15 @@ namespace Entidades
             get { return nEspacio; }
             set { nEspacio = value; }
         }
-        public string TVehiculo
+        public int UsuarioID
         {
-            get { return tVehiculo; }
-            set { tVehiculo = value; }
+            get { return usuarioID; }
+            set { usuarioID = value; }
         }
-        public bool Disponibilidad
+        public int ReservaID
         {
-            get { return disponibilidad;}
-            set { disponibilidad = value;}
+            get { return reservaID; }
+            set { reservaID = value; }
         }
         #endregion
     }

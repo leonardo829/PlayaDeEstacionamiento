@@ -9,18 +9,18 @@ using Entidades;
 
 namespace Datos
 {
-    public class DatosUsuarios : DatosConexionDB
+    public class DatosReservas : DatosConexionDB
     {
-        public int aUsuarios(string accion, Usuario objUsuario)
+        public int abReservas(string accion, Reserva objReservas)
         {
             int resultado = -1;
             string orden = string.Empty;
             if (accion == "Alta")
-                orden = "insert into Usuarios values (" + objUsuario.Telefono + ",'" + objUsuario.Nombre +
-           "'" + objUsuario.Dominio + ",'" + objUsuario.Tipo + ", ) ";
-
+                orden = "insert into Reservas values (" + objReservas.UsuarioID +
+                ",'" + objReservas.NEspacio + "');";
+            if (accion == "Baja")
+                orden = "DELETE FROM Reserva WHERE ReservaID = " + objReservas.NEspacio + ";";
             SqlCommand cmd = new SqlCommand(orden, conexion);
-
             try
             {
                 Abrirconexion();
@@ -28,7 +28,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                throw new Exception("Error al tratar de crear Usuarios", e);
+                throw new Exception("Error al tratar de crear o borrar Reservas",e);
             }
             finally
             {

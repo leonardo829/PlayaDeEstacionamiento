@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,18 +10,15 @@ using Entidades;
 
 namespace Datos
 {
-    public class DatosUsuarios : DatosConexionDB
+    public class DatosEspacios : DatosConexionDB
     {
-        public int aUsuarios(string accion, Usuario objUsuario)
+        public int mEspacios (string accion, Espacio objEspacios)
         {
             int resultado = -1;
             string orden = string.Empty;
-            if (accion == "Alta")
-                orden = "insert into Usuarios values (" + objUsuario.Telefono + ",'" + objUsuario.Nombre +
-           "'" + objUsuario.Dominio + ",'" + objUsuario.Tipo + ", ) ";
-
+            if (accion == "Modificar")
+                orden = "UPDATE Espacios SET Disponibilidad = '" + objEspacios.Disponibilidad + "';";
             SqlCommand cmd = new SqlCommand(orden, conexion);
-
             try
             {
                 Abrirconexion();
@@ -28,7 +26,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                throw new Exception("Error al tratar de crear Usuarios", e);
+                throw new Exception("Error al tratar de modificar disponibilidad", e);
             }
             finally
             {
