@@ -39,9 +39,9 @@ namespace Presentacion
             Consultasql = objNegEspacios.mmEspacios("Modificar", objEntEspacio);
 
 
-            if (lbTVehiFP.SelectedItem == null)
+            if (lbTVehiB.SelectedItem == null)
             {
-                errorProvider1.SetError(lbTVehiFP, "seleccione un tipo de vehiculo");
+                errorProvider1.SetError(lbTVehiB, "seleccione un tipo de vehiculo");
                 return;
             }
             if (Consultasql == -1)
@@ -49,9 +49,9 @@ namespace Presentacion
                 errorProvider1.SetError(lblLugarR, "no hay lugares disponibles para su tipo de vahiculo");
             }
 
-            else errorProvider1.SetError(lbTVehiFP, "");
+            else errorProvider1.SetError(lbTVehiB, "");
             {
-                objEntEspacio.tVehiculo = (string)lbTVehiFP.SelectedItem;
+                objEntEspacio.tVehiculo = (string)lbTVehiB.SelectedItem;
                 lblRBuscar.Text = "Los lugares disponibles son" + Consultasql;
             }
         }

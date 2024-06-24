@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tpBuscarLugar = new TabPage();
-            lbTVehiFP = new ListBox();
+            lbTVehiB = new ListBox();
             lblSST = new Label();
             lblRBuscar = new Label();
             btnBuscar = new Button();
@@ -44,6 +44,11 @@
             lblRLiberar = new Label();
             btnLiberar = new Button();
             errorProvider1 = new ErrorProvider(components);
+            lbTVR = new ListBox();
+            txtNumeroLB = new TextBox();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
             tabControl1.SuspendLayout();
             tpBuscarLugar.SuspendLayout();
             tpReservar.SuspendLayout();
@@ -65,7 +70,7 @@
             // tpBuscarLugar
             // 
             tpBuscarLugar.BackColor = Color.FromArgb(30, 90, 120);
-            tpBuscarLugar.Controls.Add(lbTVehiFP);
+            tpBuscarLugar.Controls.Add(lbTVehiB);
             tpBuscarLugar.Controls.Add(lblSST);
             tpBuscarLugar.Controls.Add(lblRBuscar);
             tpBuscarLugar.Controls.Add(btnBuscar);
@@ -79,17 +84,17 @@
             tpBuscarLugar.TabIndex = 0;
             tpBuscarLugar.Text = "Buscar Lugar";
             // 
-            // lbTVehiFP
+            // lbTVehiB
             // 
-            lbTVehiFP.FormattingEnabled = true;
-            lbTVehiFP.ItemHeight = 32;
-            lbTVehiFP.Items.AddRange(new object[] { "Auto", "Camioneta", "Moto" });
-            lbTVehiFP.Location = new Point(279, 74);
-            lbTVehiFP.Name = "lbTVehiFP";
-            lbTVehiFP.ScrollAlwaysVisible = true;
-            lbTVehiFP.Size = new Size(154, 100);
-            lbTVehiFP.Sorted = true;
-            lbTVehiFP.TabIndex = 9;
+            lbTVehiB.FormattingEnabled = true;
+            lbTVehiB.ItemHeight = 32;
+            lbTVehiB.Items.AddRange(new object[] { "Auto", "Camioneta", "Moto" });
+            lbTVehiB.Location = new Point(279, 74);
+            lbTVehiB.Name = "lbTVehiB";
+            lbTVehiB.ScrollAlwaysVisible = true;
+            lbTVehiB.Size = new Size(154, 100);
+            lbTVehiB.Sorted = true;
+            lbTVehiB.TabIndex = 9;
             // 
             // lblSST
             // 
@@ -128,6 +133,10 @@
             // tpReservar
             // 
             tpReservar.BackColor = Color.FromArgb(30, 90, 130);
+            tpReservar.Controls.Add(label2);
+            tpReservar.Controls.Add(label1);
+            tpReservar.Controls.Add(textBox1);
+            tpReservar.Controls.Add(lbTVR);
             tpReservar.Controls.Add(lblRLD);
             tpReservar.Controls.Add(lblLugarR);
             tpReservar.Controls.Add(btnReservar);
@@ -143,7 +152,7 @@
             // 
             lblRLD.AutoSize = true;
             lblRLD.ForeColor = SystemColors.ButtonHighlight;
-            lblRLD.Location = new Point(257, 29);
+            lblRLD.Location = new Point(253, 14);
             lblRLD.Name = "lblRLD";
             lblRLD.Size = new Size(192, 32);
             lblRLD.TabIndex = 7;
@@ -153,10 +162,11 @@
             // 
             lblLugarR.BorderStyle = BorderStyle.Fixed3D;
             lblLugarR.ForeColor = SystemColors.ButtonHighlight;
-            lblLugarR.Location = new Point(131, 286);
+            lblLugarR.Location = new Point(133, 329);
             lblLugarR.Name = "lblLugarR";
             lblLugarR.Size = new Size(447, 85);
             lblLugarR.TabIndex = 5;
+            lblLugarR.Text = " Su lugar reservado es X";
             lblLugarR.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnReservar
@@ -164,7 +174,7 @@
             btnReservar.Cursor = Cursors.Hand;
             btnReservar.FlatStyle = FlatStyle.Popup;
             btnReservar.ForeColor = SystemColors.ButtonHighlight;
-            btnReservar.Location = new Point(298, 172);
+            btnReservar.Location = new Point(294, 239);
             btnReservar.Name = "btnReservar";
             btnReservar.Size = new Size(112, 75);
             btnReservar.TabIndex = 4;
@@ -175,6 +185,7 @@
             // tpLiberar
             // 
             tpLiberar.BackColor = Color.FromArgb(30, 90, 140);
+            tpLiberar.Controls.Add(txtNumeroLB);
             tpLiberar.Controls.Add(lblSSL);
             tpLiberar.Controls.Add(lblRLiberar);
             tpLiberar.Controls.Add(btnLiberar);
@@ -189,11 +200,11 @@
             // 
             lblSSL.AutoSize = true;
             lblSSL.ForeColor = SystemColors.ButtonHighlight;
-            lblSSL.Location = new Point(195, 36);
+            lblSSL.Location = new Point(150, 21);
             lblSSL.Name = "lblSSL";
-            lblSSL.Size = new Size(297, 32);
+            lblSSL.Size = new Size(413, 32);
             lblSSL.TabIndex = 7;
-            lblSSL.Text = "Selecione el lugar a liberar";
+            lblSSL.Text = "Indique el numero  del lugar a liberar";
             // 
             // lblRLiberar
             // 
@@ -203,6 +214,7 @@
             lblRLiberar.Name = "lblRLiberar";
             lblRLiberar.Size = new Size(447, 85);
             lblRLiberar.TabIndex = 5;
+            lblRLiberar.Text = "El lugar X a sido liberado";
             lblRLiberar.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnLiberar
@@ -210,7 +222,7 @@
             btnLiberar.Cursor = Cursors.Hand;
             btnLiberar.FlatStyle = FlatStyle.Popup;
             btnLiberar.ForeColor = SystemColors.ButtonHighlight;
-            btnLiberar.Location = new Point(288, 147);
+            btnLiberar.Location = new Point(292, 187);
             btnLiberar.Name = "btnLiberar";
             btnLiberar.Size = new Size(112, 75);
             btnLiberar.TabIndex = 4;
@@ -220,6 +232,53 @@
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
+            // 
+            // lbTVR
+            // 
+            lbTVR.FormattingEnabled = true;
+            lbTVR.ItemHeight = 32;
+            lbTVR.Items.AddRange(new object[] { "Auto", "Camioneta", "Moto" });
+            lbTVR.Location = new Point(274, 79);
+            lbTVR.Name = "lbTVR";
+            lbTVR.ScrollAlwaysVisible = true;
+            lbTVR.Size = new Size(154, 100);
+            lbTVR.Sorted = true;
+            lbTVR.TabIndex = 10;
+            // 
+            // txtNumeroLB
+            // 
+            txtNumeroLB.Location = new Point(267, 106);
+            txtNumeroLB.Name = "txtNumeroLB";
+            txtNumeroLB.Size = new Size(150, 39);
+            txtNumeroLB.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(274, 185);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 39);
+            textBox1.TabIndex = 11;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(113, 188);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 32);
+            label1.TabIndex = 12;
+            label1.Text = "Dominio";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(76, 79);
+            label2.Name = "label2";
+            label2.Size = new Size(192, 76);
+            label2.TabIndex = 13;
+            label2.Text = "seleccione su tipo de vehiculo";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Programa
             // 
@@ -257,7 +316,12 @@
         private Label lblSSL;
         private Label lblRLiberar;
         private Button btnLiberar;
-        private ListBox lbTVehiFP;
+        private ListBox lbTVehiB;
         private ErrorProvider errorProvider1;
+        private ListBox lbTVR;
+        private TextBox txtNumeroLB;
+        private Label label2;
+        private Label label1;
+        private TextBox textBox1;
     }
 }
