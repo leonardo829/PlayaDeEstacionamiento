@@ -12,9 +12,9 @@ namespace Negocios
     public class NegEspacios
     {
         DatosEspacios objDatosEspacios = new DatosEspacios();
-        public int mEspacios(string accion, Espacio objEspacios)
+        public int mmEspacios(string accion, Espacio objEspacios)
         {
-            return objDatosEspacios.mEspacios(accion, objEspacios);
+            return objDatosEspacios.mmEspacios(accion, objEspacios);
         }
     }
 }

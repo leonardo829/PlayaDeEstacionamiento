@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tpBuscarLugar = new TabPage();
+            lbTVehiFP = new ListBox();
             lblSST = new Label();
             lblRBuscar = new Label();
             btnBuscar = new Button();
@@ -41,10 +43,12 @@
             lblSSL = new Label();
             lblRLiberar = new Label();
             btnLiberar = new Button();
+            errorProvider1 = new ErrorProvider(components);
             tabControl1.SuspendLayout();
             tpBuscarLugar.SuspendLayout();
             tpReservar.SuspendLayout();
             tpLiberar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -61,6 +65,7 @@
             // tpBuscarLugar
             // 
             tpBuscarLugar.BackColor = Color.FromArgb(30, 90, 120);
+            tpBuscarLugar.Controls.Add(lbTVehiFP);
             tpBuscarLugar.Controls.Add(lblSST);
             tpBuscarLugar.Controls.Add(lblRBuscar);
             tpBuscarLugar.Controls.Add(btnBuscar);
@@ -73,6 +78,18 @@
             tpBuscarLugar.Size = new Size(699, 431);
             tpBuscarLugar.TabIndex = 0;
             tpBuscarLugar.Text = "Buscar Lugar";
+            // 
+            // lbTVehiFP
+            // 
+            lbTVehiFP.FormattingEnabled = true;
+            lbTVehiFP.ItemHeight = 32;
+            lbTVehiFP.Items.AddRange(new object[] { "Auto", "Camioneta", "Moto" });
+            lbTVehiFP.Location = new Point(279, 74);
+            lbTVehiFP.Name = "lbTVehiFP";
+            lbTVehiFP.ScrollAlwaysVisible = true;
+            lbTVehiFP.Size = new Size(154, 100);
+            lbTVehiFP.Sorted = true;
+            lbTVehiFP.TabIndex = 9;
             // 
             // lblSST
             // 
@@ -100,12 +117,13 @@
             btnBuscar.Cursor = Cursors.Hand;
             btnBuscar.FlatStyle = FlatStyle.Popup;
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
-            btnBuscar.Location = new Point(289, 141);
+            btnBuscar.Location = new Point(297, 202);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(112, 75);
             btnBuscar.TabIndex = 0;
             btnBuscar.Text = "Buscar Lugar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // tpReservar
             // 
@@ -199,6 +217,10 @@
             btnLiberar.Text = "Liberar Lugar";
             btnLiberar.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // Programa
             // 
             AutoScaleDimensions = new SizeF(144F, 144F);
@@ -216,6 +238,7 @@
             tpReservar.PerformLayout();
             tpLiberar.ResumeLayout(false);
             tpLiberar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -234,5 +257,7 @@
         private Label lblSSL;
         private Label lblRLiberar;
         private Button btnLiberar;
+        private ListBox lbTVehiFP;
+        private ErrorProvider errorProvider1;
     }
 }

@@ -11,35 +11,35 @@ namespace Entidades
 
     {
         #region atributos
-        private int reservaID { get; set; }
-        private int usuarioID { get; set; }
-        private int nEspacio { get; set; }
+        private int ReservaID { get; set; }
+        private int UsuarioID { get; set; }
+        private int NEspacio { get; set; }
         #endregion
 
         #region Constructor
         public void Reservas()
         {
-            reservaID = 0;
-            usuarioID = 0;
-            nEspacio = 0;
+            ReservaID = 0;
+            UsuarioID = 0;
+            NEspacio = 0;
         }
         #endregion
 
         #region propiedades/encapsulamiento
-        public int NEspacio
+        public int nEspacio
         {
-            get { return nEspacio; }
-            set { nEspacio = value; }
+            get { return NEspacio; }
+            set { NEspacio = value; }
         }
-        public int UsuarioID
+        public int usuarioID
         {
-            get { return usuarioID; }
-            set { usuarioID = value; }
+            get { return UsuarioID; }
+            set { UsuarioID = value; }
         }
-        public int ReservaID
+        public int reservaID
         {
-            get { return reservaID; }
-            set { reservaID = value; }
+            get { return ReservaID; }
+            set { ReservaID = value; }
         }
         #endregion
     }

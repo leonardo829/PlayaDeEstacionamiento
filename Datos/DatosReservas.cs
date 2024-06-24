@@ -16,10 +16,10 @@ namespace Datos
             int resultado = -1;
             string orden = string.Empty;
             if (accion == "Alta")
-                orden = "insert into Reservas values (" + objReservas.UsuarioID +
-                ",'" + objReservas.NEspacio + "');";
+                orden = "insert into Reservas values (" + objReservas.usuarioID +
+                ",'" + objReservas.nEspacio + "');";
             if (accion == "Baja")
-                orden = "DELETE FROM Reserva WHERE ReservaID = " + objReservas.NEspacio + ";";
+                orden = "DELETE FROM Reserva WHERE ReservaID = " + objReservas.nEspacio + ";";
             SqlCommand cmd = new SqlCommand(orden, conexion);
             try
             {

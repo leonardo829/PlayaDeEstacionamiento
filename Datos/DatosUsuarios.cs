@@ -16,8 +16,9 @@ namespace Datos
             int resultado = -1;
             string orden = string.Empty;
             if (accion == "Alta")
-                orden = "insert into Usuarios values (" + objUsuario.Telefono + ",'" + objUsuario.Nombre +
-           "'" + objUsuario.Dominio + ",'" + objUsuario.Tipo + ", ) ";
+            {
+                orden = $"INSERT INTO Usuarios (Telefono, Nombre, Dominio, TipoVehiculo) VALUES ({objUsuario.telefono}, '{objUsuario.nombre}', '{objUsuario.dominio}', '{objUsuario.tipo}')";
+            }
 
             SqlCommand cmd = new SqlCommand(orden, conexion);
 

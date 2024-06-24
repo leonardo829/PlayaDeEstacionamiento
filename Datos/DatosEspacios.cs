@@ -11,13 +11,23 @@ using Entidades;
 namespace Datos
 {
     public class DatosEspacios : DatosConexionDB
-    {
-        public int mEspacios (string accion, Espacio objEspacios)
+    {  
+        public int mmEspacios (string accion, Espacio objEspacios)
         {
             int resultado = -1;
             string orden = string.Empty;
             if (accion == "Modificar")
-                orden = "UPDATE Espacios SET Disponibilidad = '" + objEspacios.Disponibilidad + "';";
+            {
+                orden = "UPDATE Espacios SET Disponibilidad = '" + objEspacios.disponibilidad + "';";
+            }
+             
+            if (accion == "Mostrar")
+            {
+                string tipoVehiculo = objEspacios.tVehiculo; 
+                orden = $"SELECT Numero FROM Espacios WHERE Disponibilidad = 's' AND TipoVehiculo = '{tipoVehiculo}'";
+            }
+                
+
             SqlCommand cmd = new SqlCommand(orden, conexion);
             try
             {

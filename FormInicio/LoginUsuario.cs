@@ -38,37 +38,42 @@ namespace Presentacion
                     return;
             }
 
-            if (!string.IsNullOrEmpty(txtDominio.Text))
+            if (txtDominio.Text == "")
             {
                     errorProvider1.SetError(txtDominio, "ingrese un dominio");
+                    return ;
             }
 
             if (lbTVehi.SelectedItem == null)
             {
                     errorProvider1.SetError(lbTVehi, "seleccione un tipo de vehiculo");
+                    return ;
             }
 
-            else
+            else errorProvider1.SetError(txtTelefono, "");
             {
-                    objEntUsuario.Nombre = txtNombre.Text;
-                    objEntUsuario.Telefono = Int64.Parse(txtTelefono.Text);
-                    objEntUsuario.Dominio = txtDominio.Text;
-                    objEntUsuario.Tipo = (string)lbTVehi.SelectedItem;
+                    objEntUsuario.nombre = txtNombre.Text;
+                    objEntUsuario.telefono = Int64.Parse(txtTelefono.Text);
+                    objEntUsuario.dominio = txtDominio.Text;
+                    objEntUsuario.tipo = (string)lbTVehi.SelectedItem;
             }
 
             int Ingresados = -1;
             //llamo al método que carga los datos del objeto
             Ingresados = objNegUsuarios.aUsuarios("Alta", objEntUsuario); //invoco a la capa de negocio
             if (Ingresados == -1)
-                MessageBox.Show("No pudo crear usuario");
+                MessageBox.Show("No se pudo crear el usuario");
             else
-            {
-                this.Close();
-                Programa programaForm = new Programa();
-                programaForm.Show();
+            { 
+                Programa programaForm = Application.OpenForms.OfType<Programa>().FirstOrDefault();
+                if (programaForm == null)
+                {
+                    programaForm = new Programa();
+                    programaForm.Show();
+                }
+                
             }
-
-
+            this.Hide();
         }
     }
 }

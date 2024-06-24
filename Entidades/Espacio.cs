@@ -9,36 +9,39 @@ namespace Entidades
 {
     public class Espacio
     {
+        
         #region atributos
-        private int nEspacio {  get; set; }
-        private string tVehiculo { get; set; }
-        private bool disponibilidad { get; set; }
+        private int NEspacio {  get; set; }
+        private string TVehiculo { get; set; }
+        private string Disponibilidad { get; set; }
+
+
         #endregion
 
         #region Constructor
         public void Espacios()
         {
-            nEspacio = 0;
-            tVehiculo = string.Empty;
-            disponibilidad = true;
+            NEspacio = 0;
+            TVehiculo = string.Empty;
+            Disponibilidad = "s" ;
         }
         #endregion
 
         #region propiedades/encapsulamiento
-        public int NEspacio
+        public int nEspacio
         {
-            get { return nEspacio; }
-            set { nEspacio = value; }
+            get { return NEspacio; }
+            set { NEspacio = value; }
         }
-        public string TVehiculo
+        public string tVehiculo
         {
-            get { return tVehiculo; }
-            set { tVehiculo = value; }
+            get { return TVehiculo; }
+            set { TVehiculo = value; }
         }
-        public bool Disponibilidad
+        public string disponibilidad
         {
-            get { return disponibilidad;}
-            set { disponibilidad = value;}
+            get { return Disponibilidad;}
+            set { Disponibilidad = value;}
         }
         #endregion
     }

@@ -11,45 +11,45 @@ namespace Entidades
     {
         #region atributos
         private int UsuarioID;
-        private string nombre {  get; set; }
-        private Int64 telefono { get; set; }
+        private string Nombre {  get; set; }
+        private Int64 Telefono { get; set; }
 
-        private string tipo { get; set; }
-        private string dominio { get; set; }
+        private string Tipo { get; set; }
+        private string Dominio { get; set; }
 
         #endregion
 
         #region Constructor
         public void Usuarios()
         {
-            nombre = string.Empty;
-            telefono = 0;
-            dominio = string.Empty;
-            tipo = string.Empty;
+            Nombre = string.Empty;
+            Telefono = 0;
+            Dominio = string.Empty;
+            Tipo = string.Empty;
             
         }
         #endregion
 
         #region propiedades/encapsulamiento
-        public string Nombre
+        public string nombre
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return Nombre; }
+            set { Nombre = value; }
         }
-        public Int64 Telefono
+        public Int64 telefono
         {
-            get { return telefono; } 
-            set { telefono = value; }
+            get { return Telefono; } 
+            set { Telefono = value; }
         }
-        public string Dominio
+        public string dominio
         {
-            get { return dominio; }
-            set { dominio = value; }
+            get { return Dominio; }
+            set { Dominio = value; }
         }
-        public string Tipo
+        public string tipo
         {
-            get { return tipo; } 
-            set { tipo = value; }
+            get { return Tipo; } 
+            set { Tipo = value; }
         }
         
 
