@@ -17,6 +17,7 @@ namespace Datos
             int resultado = -1;
             string orden = string.Empty;
             if (accion == "Modificar")
+                //esto tampoco lo llegue a utilizar y seria para la accion de liberar el lugar
             {
                 orden = "UPDATE Espacios SET Disponibilidad = '" + objEspacios.disponibilidad + "';";
             }

@@ -36,19 +36,19 @@
             lblRBuscar = new Label();
             btnBuscar = new Button();
             tpReservar = new TabPage();
+            label2 = new Label();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            lbTVR = new ListBox();
             lblRLD = new Label();
             lblLugarR = new Label();
             btnReservar = new Button();
             tpLiberar = new TabPage();
+            txtNumeroLB = new TextBox();
             lblSSL = new Label();
             lblRLiberar = new Label();
             btnLiberar = new Button();
             errorProvider1 = new ErrorProvider(components);
-            lbTVR = new ListBox();
-            txtNumeroLB = new TextBox();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
             tabControl1.SuspendLayout();
             tpBuscarLugar.SuspendLayout();
             tpReservar.SuspendLayout();
@@ -148,6 +148,46 @@
             tpReservar.TabIndex = 1;
             tpReservar.Text = "Reservar Lugar";
             // 
+            // label2
+            // 
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(76, 79);
+            label2.Name = "label2";
+            label2.Size = new Size(192, 76);
+            label2.TabIndex = 13;
+            label2.Text = "seleccione su tipo de vehiculo";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(113, 188);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 32);
+            label1.TabIndex = 12;
+            label1.Text = "Dominio";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(274, 185);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 39);
+            textBox1.TabIndex = 11;
+            // 
+            // lbTVR
+            // 
+            lbTVR.FormattingEnabled = true;
+            lbTVR.ItemHeight = 32;
+            lbTVR.Items.AddRange(new object[] { "Auto", "Camioneta", "Moto" });
+            lbTVR.Location = new Point(274, 79);
+            lbTVR.Name = "lbTVR";
+            lbTVR.ScrollAlwaysVisible = true;
+            lbTVR.Size = new Size(154, 100);
+            lbTVR.Sorted = true;
+            lbTVR.TabIndex = 10;
+            // 
             // lblRLD
             // 
             lblRLD.AutoSize = true;
@@ -196,6 +236,13 @@
             tpLiberar.TabIndex = 2;
             tpLiberar.Text = "Liberar Lugar";
             // 
+            // txtNumeroLB
+            // 
+            txtNumeroLB.Location = new Point(267, 106);
+            txtNumeroLB.Name = "txtNumeroLB";
+            txtNumeroLB.Size = new Size(150, 39);
+            txtNumeroLB.TabIndex = 8;
+            // 
             // lblSSL
             // 
             lblSSL.AutoSize = true;
@@ -228,62 +275,15 @@
             btnLiberar.TabIndex = 4;
             btnLiberar.Text = "Liberar Lugar";
             btnLiberar.UseVisualStyleBackColor = true;
+            btnLiberar.Click += btnLiberar_Click;
             // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
             // 
-            // lbTVR
-            // 
-            lbTVR.FormattingEnabled = true;
-            lbTVR.ItemHeight = 32;
-            lbTVR.Items.AddRange(new object[] { "Auto", "Camioneta", "Moto" });
-            lbTVR.Location = new Point(274, 79);
-            lbTVR.Name = "lbTVR";
-            lbTVR.ScrollAlwaysVisible = true;
-            lbTVR.Size = new Size(154, 100);
-            lbTVR.Sorted = true;
-            lbTVR.TabIndex = 10;
-            // 
-            // txtNumeroLB
-            // 
-            txtNumeroLB.Location = new Point(267, 106);
-            txtNumeroLB.Name = "txtNumeroLB";
-            txtNumeroLB.Size = new Size(150, 39);
-            txtNumeroLB.TabIndex = 8;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(274, 185);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 39);
-            textBox1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(113, 188);
-            label1.Name = "label1";
-            label1.Size = new Size(106, 32);
-            label1.TabIndex = 12;
-            label1.Text = "Dominio";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(76, 79);
-            label2.Name = "label2";
-            label2.Size = new Size(192, 76);
-            label2.TabIndex = 13;
-            label2.Text = "seleccione su tipo de vehiculo";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // Programa
             // 
-            AutoScaleDimensions = new SizeF(144F, 144F);
-            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(30, 50, 90);
             ClientSize = new Size(778, 544);
             Controls.Add(tabControl1);

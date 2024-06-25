@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 namespace Entidades
 {
 
+    //puse los datos del Vehiculo en si en el usuario por que me parecio mas facil para hacer una base de datos relacional
+
+
     public class Usuario 
     {
         #region atributos
-        private int UsuarioID;
+        private int UsuarioID {  get; set; }
         private string Nombre {  get; set; }
         private Int64 Telefono { get; set; }
 
@@ -26,11 +29,16 @@ namespace Entidades
             Telefono = 0;
             Dominio = string.Empty;
             Tipo = string.Empty;
-            
+            UsuarioID = 0;
         }
         #endregion
 
         #region propiedades/encapsulamiento
+        public int usuarioID
+        {
+            get { return UsuarioID; }
+            set { UsuarioID = value; }
+        }
         public string nombre
         {
             get { return Nombre; }

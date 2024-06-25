@@ -12,15 +12,25 @@ using Negocios;
 
 namespace Presentacion
 {
+
+    //falta agregar un ingreso de usuario que se me ocurrio para poder usar los datos de cada usuario en el 2do form
+    //este form funciona al 100% segun mis testeos
+
+
     public partial class LoginUsuario : Form
     {
+        public Usuario objEntUsuario = new Usuario();
+        public NegUsuarios objNegUsuarios = new NegUsuarios();
+        public Espacio objEntEspacio = new Espacio();
+        public NegEspacios objNegEspacios = new NegEspacios();
+        public Reserva objEntReserva = new Reserva();
+        public NegReservas objNegReservas = new NegReservas();
         public LoginUsuario()
         {
             InitializeComponent();
         }
 
-        public Usuario objEntUsuario = new Usuario();
-        public NegUsuarios objNegUsuarios = new NegUsuarios();
+        
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {

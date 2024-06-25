@@ -9,6 +9,8 @@ using Entidades;
 
 namespace Datos
 {
+    //esto funciona bien me falta agregar la accion de ingresar cuando el usuario ya esa creado
+
     public class DatosUsuarios : DatosConexionDB
     {
         public int aUsuarios(string accion, Usuario objUsuario)

@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
+    //con la conexion tube muchos problemas para que funcione a causa de erres de SSL?? y de encriptacion de mi Manager de SQL pero los pude solucionar
+
     public class DatosConexionDB
     {
         public SqlConnection conexion;

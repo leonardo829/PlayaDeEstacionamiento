@@ -11,6 +11,8 @@ namespace Datos
 {
     public class DatosReservas : DatosConexionDB
     {
+
+        //todo esto aun no se si funciona no lo llegue a utilizar aun
         public int abReservas(string accion, Reserva objReservas)
         {
             int resultado = -1;
